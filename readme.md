@@ -155,4 +155,5 @@ Release版本：https://github.com/studyzy/imewlconverter/releases/
 
 以下文档介绍了一些高级扩展功能的配置方法：
 
+- [霞鹜文楷](https://github.com/lxgw/LxgwWenKai) - 一个开源字体，用于解决一些生僻字被显示为囗的问题。
 - [模糊音显示正确注音](say_it_right_guide.md) - 在使用模糊音时自动标注正确的拼音读音
