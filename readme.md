@@ -79,6 +79,7 @@ patch:
     - derive/eng$/en/
     - derive/en$/eng/
     - derive/in$/ing/
+    - derive/ing$/in/
     - derive/uan$/uang/
     - derive/uang$/uan/
 ```
