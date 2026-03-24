@@ -166,7 +166,7 @@ Release版本：https://github.com/studyzy/imewlconverter/releases/
 
 ### 📝 使用示例
 
-例如，当您配置了 `zh → z` 的模糊音规则后：
+例如，当您配置了 `chi → c` 的模糊音规则后：
 
 - 输入 `ci fan`（使用了模糊音）
 - 候选词显示：`吃饭 〔吃=chi 饭=fan〕`
