@@ -1,0 +1,21 @@
+customization:
+  distribution_code_name: Weasel
+  distribution_version: 0.17.0
+  generator: "Weasel::UIStyleSettings"
+  modified_time: "Mon Mar 23 13:43:27 2026"
+  rime_version: 1.13.1
+patch:
+  "style/color_scheme": google
+  
+  # 字体配置
+  "style/font_face": "LXGW WenKai, Segoe UI Emoji, Microsoft YaHei"  # 主字体：霞鹭文楷
+  "style/comment_font_face": "LXGW WenKai, Microsoft YaHei"           # 注释字体
+  "style/comment_font_point": 13                                      # 注释字号
+  
+  # 布局配置
+  "style/layout/align_type": "bottom"                                 # 底部对齐（标签、候选、注释）
+  
+  # comment 颜色配置（覆盖当前配色方案的颜色）
+  # 颜色格式：0xAABBGGRR（透明度 蓝 绿 红）
+  "preset_color_schemes/google/comment_text_color": 0xFFB07035        # 普通注释：深蓝色 #3570B0，更深更清晰
+  "preset_color_schemes/google/hilited_comment_text_color": 0xFFE8D0B8 # 选中项注释：浅蓝灰 #B8D0E8，带蓝色调

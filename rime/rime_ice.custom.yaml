@@ -1,7 +1,27 @@
 # 以 patch: 开头，后面的内容都需要缩进
 patch:
-  menu/page_size: 10    # 修改候选词数量为10个
-
+  menu/page_size: 6 # 修改候选词数量
+  
+  # 在 corrector 之前插入模糊音 filter
+  engine/filters/@before 0:
+      lua_filter@*say_it_right_filter  # 模糊音正确拼音提示（必须在 corrector 之前）
+  
+  # 模糊音 filter 配置
+  say_it_right_filter:
+    keep_original_comment: true           # 保留原始拼音注释，兼容 corrector（推荐）
+    style: "{pinyin}"               # 注释外层样式
+    single_char_format: "{pinyin}"     # 单字格式（可用占位符：{char} {pinyin}）
+    multi_char_format: "{char}({pinyin})" # 多字格式（可用占位符：{char} {pinyin}）
+    separator: " "                      # 多个注释的连接符（默认空格）
+    # 实际显示效果示例：
+    #   单字：〔chi〕
+    #   多字：〔吃=chi 饭=fan〕
+    #   自定义 separator: "、"时：〔吃=chi、饭=fan〕
+    # 说明：
+    # - 有模糊音时：只显示模糊音提示（如 〔吃=chi〕）
+    # - 无模糊音但输入不匹配时：保留原始注释供 corrector 显示错音提示
+    # - 完全匹配时：keep_original_comment=true 保留注释，false 清空注释
+  
   # 追加模糊音规则
   ##### 结尾的 /+ 表示在原基础上追加，而不是覆盖
   speller/algebra/+:
