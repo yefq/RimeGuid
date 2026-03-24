@@ -60,7 +60,7 @@ github地址：https://github.com/iDvel/rime-ice
 
 下面以追加模糊音规则为例：
 
-1. 新建一个文件：`rime_ice.schema.custom.yaml`（作为`rime_ice.schema.yaml`的补丁）
+1. 新建一个文件：`rime_ice.custom.yaml`（作为`rime_ice.schema.yaml`的补丁）
 2. 粘贴以下yaml配置：
 
 ```yaml
@@ -86,6 +86,22 @@ patch:
 
 3. 保存这个配置文件，规则可能还没有生效。
 4. 在输入法图标上右键，在弹出的菜单中点击`重新部署（R）`，现在规则应该已经生效。
+
+### 🔢 候选词数量设置
+
+与模糊音同理，如果要修改候选词数量：
+
+1. 在`rime_ice.custom.yaml`的`patch:`的下级，增加字段：`menu/page_size: 10`，修改后的yaml配置如下：
+
+```yaml
+# 以 patch: 开头，后面的内容都需要缩进
+patch:
+  menu/page_size: 10 # 修改候选词数量为10个
+  speller/algebra/+:
+    # 省略这部分内容
+```
+
+2. 在输入法图标上右键，在弹出的菜单中点击`重新部署（R）`，现在规则应该已经生效。
 
 ## 📚 导入其他输入法的词库
 
